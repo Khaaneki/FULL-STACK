@@ -1,0 +1,25 @@
+1. SELECT e.prenom, d.noregion FROM employe e LEFT JOIN dept d ON e.nodep = d.nodept; 
+2. SELECT e.nom, d.nom, e.nodep AS "Département" FROM employe e LEFT JOIN dept d ON e.nodep = d.nodept; 
+3. SELECT e.nom, d.nom AS "Département" FROM employe e LEFT JOIN dept d ON e.nodep = d.nodept WHERE d.nom = "Distribution";
+4. 
+5. SELECT nom, titre FROM employe WHERE titre = ( SELECT titre FROM employe WHERE nom = 'Amartakaldire');
+6.SELECT e.nom, e.salaire, e.nodep FROM employe e WHERE e.salaire > ANY (SELECT e2.salaire FROM employe e2 WHERE e.nodep = 31) ORDER BY e.nodep, e.salaire;
+7. 
+8. SELECT nom, titre FROM employe WHERE service = 31 AND titre IN (SELECT titre FROM employe WHERE service = 32);
+9. SELECT nom, titre FROM employe WHERE service = 31 AND titre NOT IN (SELECT titre FROM employe WHERE service = 32);
+10. SELECT e.nom, e.titre, e.salaire FROM employe e WHERE e.titre = (SELECT titre FROM employe WHERE nom = 'Fairant') AND e.salaire = (SELECT salaire FROM employe WHERE nom = 'Fairant');
+11. 
+12. 
+13. 
+14. 
+15. 
+16. 
+17. 
+18. 
+19. 
+20. 
+SELECT e.nom AS employe_nom, e.salaire AS employe_salaire, p.nom AS patron_nom, p.salaire AS patron_salaire FROM employes AS e JOIN employes AS p ON e.id_patron = p.id WHERE e.salaire > p.salaire;
+
+SELECT e.nom AS nom, e.salaire AS salaire, e.departement AS departement
+FROM employe e WHERE e.salaire > (SELECT MAX(salaire) FROM employe WHERE nodep = 31 )ORDER BY e.nodep, e.salaire;
+
