@@ -1,0 +1,129 @@
+<?php
+include 'classes/Personnage.class.php';
+
+$character = new Personnage();
+$character->setNom("Lebowski");
+$character->setPrenom("Jeff");
+$character->setSexe("Masculin");
+$character->setAge(34);
+
+function Appel($a){
+    echo 'Nom : ' . $a->getNom() . '<br>';
+    echo 'Prénom : ' . $a->getPrenom() . '<br>';
+    echo 'Sexe : ' . $a->getSexe() . '<br>';
+    echo 'Age : ' . $a->getAge() . '<br><br>';
+}
+
+echo Appel($character);
+
+function Employe($emp) {
+    $output .= '<hr><br>Nom Prénom : ' . $emp->getNom() . ' ' . $emp->getPrenom() . '<br>';
+    $output .= 'Date d\'embauche : ' . $emp->getDate()->format('d-m-Y') . '<br>';
+    $output .= 'Le nombre d\'année passée au sein de l\'entreprise : ' . $emp->Anciennete($emp->getDate()) .'La prime s\'élève à : ' . $emp->Prime($emp->getSalaire(),$emp->Anciennete($emp->getDate())) . ' <br>';
+    $output .= 'Fonction et salaire : ' . $emp->getFonction() .' '. $emp->getSalaire() . ' € <br>';
+    $output .= 'Service : ' . $emp->getService() .'<br>';
+    if ($emp->getMagasin()!=NULL) {
+        $output .= 'Nom du magasin : ' . $emp->getMagasin()->getNom().' son adresse : '. $emp->getMagasin()->getAdresse() . '<br>';
+        $output .= 'Code postal du Magasin :' . $emp->getMagasin()->getCodePostal().'nom de la ville ' . $emp->getMagasin()->getVille() . '<br>';
+        $output .= 'Mode de restauration : '. $emp->getMagasin()->Ticket($emp->getMagasin()->getRestaurant()). '<br>';
+        $output .= 'Bénéficie du chèque de Noel : '. $emp->droitCheque($emp->getEnfants()) . '<br>';
+        if ($emp->droitCheque($emp->getEnfants())=='Oui') {
+            $output .= 'Montant du chèque de Noël : ' . $emp->montantCheque($emp->getEnfants()) . '€ , détail : '. $emp->detailCheque($emp->getEnfants()) . '<br><br>';
+        } else {
+            $output .= '<br>';
+        }
+    } else {
+        $output .= '<br>';
+    }
+    return $output;
+}
+
+$employe0 = new Employe();
+$employe0->setNom("jean");
+$employe0->setPrenom("jacque");
+$employe0->setDate("2020-08-15 UTC");
+$employe0->setFonction("Comptable");
+$employe0->setSalaire('3000');
+$employe0->setService('Agent de sécurité');
+$employe0->setEnfants(Array('13','8','26'));
+$employe0->setMagasin(new Magasin())->setNom('intraz');
+$employe0->getMagasin()->setAdresse('4 rue de la cote d\'azur');
+$employe0->getMagasin()->setCodePostal('80000');
+$employe0->getMagasin()->setVille('Amiens');
+$employe0->getMagasin()->setRestaurant('0');
+
+$employe1 = new Employe();
+$employe1->setNom("maillard");
+$employe1->setPrenom("inès");
+$employe1->setDate("26-07-2004 UTC");
+$employe1->setFonction("Conseillère d\'orientation");
+$employe1->setSalaire('1500');
+$employe1->setService('Agent d\'entretient');
+$employe1->setEnfants(Array('3','16','19'));
+$employe1->setMagasin(new Magasin())->setNom('placardo');
+$employe1->getMagasin()->setAdresse('56 rue de la montagne');
+$employe1->getMagasin()->setCodePostal('80000');
+$employe1->getMagasin()->setVille('Amiens');
+$employe1->getMagasin()->setRestaurant('1');
+
+$employe2 = new Employe();
+$employe2->setNom("jesaispas");
+$employe2->setPrenom("camille");
+$employe2->setDate("12-12-2018 UTC");
+$employe2->setFonction("Agent de soin");
+$employe2->setSalaire('0.10');
+$employe2->setService('Vente');
+$employe2->setEnfants(Array('38','23','8','9'));
+$employe2->setMagasin(new Magasin())->setNom('mx-arena');
+$employe2->getMagasin()->setAdresse('30 Rue de Poulainville');
+$employe2->getMagasin()->setCodePostal('80000');
+$employe2->getMagasin()->setVille('Amiens');
+$employe2->getMagasin()->setRestaurant('1');
+
+$employe3 = new Employe();
+$employe3->setNom("michon");
+$employe3->setPrenom("bernard");
+$employe3->setDate("03-04-2013 UTC");
+$employe3->setFonction("restauration rapide");
+$employe3->setSalaire('4000');
+$employe3->setService('cuisine');
+$employe3->setEnfants(Array('4','2','20','14','1','6','22','9'));
+$employe3->setMagasin(new Magasin())->setNom('jarditou');
+$employe3->getMagasin()->setAdresse('24 rue de la forêt');
+$employe3->getMagasin()->setCodePostal('80000');
+$employe3->getMagasin()->setVille('Amiens');
+$employe3->getMagasin()->setRestaurant('0');
+
+$employe4 = new Employe();
+$employe4->setNom("bilief");
+$employe4->setPrenom("reda");
+$employe4->setDate("23-02-20016 UTC");
+$employe4->setFonction("gratteur");
+$employe4->setSalaire('5000');
+$employe4->setService('mécanique');
+$employe4->setEnfants(Array('7','13','11','22','17'));
+$employe4->setMagasin(new Magasin())->setNom('hess auto');
+$employe4->getMagasin()->setAdresse('8 avenue de picardie');
+$employe4->getMagasin()->setCodePostal('80000');
+$employe4->getMagasin()->setVille('Amiens');
+$employe4->getMagasin()->setRestaurant('0');
+
+$employe5 = new Employe();
+$employe5->setNom("delafosse");
+$employe5->setPrenom("erwan");
+$employe5->setDate("27-09-2019 UTC");
+$employe5->setFonction("michto");
+$employe5->setSalaire('700');
+$employe5->setService('serveur');
+$employe5->setEnfants(Array('34','28','31'));
+$employe5->setMagasin(new Magasin())->setNom('mortadella');
+$employe5->getMagasin()->setAdresse('64 rue de la montre');
+$employe5->getMagasin()->setCodePostal('80000');
+$employe5->getMagasin()->setVille('Amiens');
+$employe5->getMagasin()->setRestaurant('1');
+
+for ($i = 0; $i < 5; $i++) {
+    $employe = 'employe' . $i;
+    echo Employe(${$employe});
+}
+?>

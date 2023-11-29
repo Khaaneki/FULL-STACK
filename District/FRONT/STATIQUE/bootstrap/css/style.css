@@ -1,0 +1,50 @@
+.card {
+    transition:all 0.3s;
+    margin: 0 0.5em;
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+}
+.cards-wrapper{
+    display: flex;
+}
+.card:hover {
+    transform: scale(0.98);
+    background-color: rgb(100, 5, 52) !important;
+}
+a{
+    text-decoration: none !important;
+    color: currentColor;
+}
+ul li a:hover {
+    color: grey !important;
+    transition:all 0.3s;
+    transform: scale(1.15);
+}
+.icon:hover{
+    margin: 0.2rem;
+}
+.h3 {
+    font-family: 'Oswald', sans-serif;
+}
+.h5 {
+    font-family: 'Oswald', sans-serif;
+}
+.h1 {
+    font-family: 'Oswald', sans-serif;
+}
+.btn {
+    transition:all 0.3s;
+
+}
+.btn:hover {
+    transform: scale(0.98);
+}
+.parallax {
+    background-image: url("/FRONT/STATIQUE/bootstrap/html/assets/back/pf-478a0cd9--Collections-Background.webp");
+  
+    min-height: 500px;
+  
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
