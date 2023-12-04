@@ -17,13 +17,8 @@
 
 <body>
     <div class="container-fluid parallax">
-        <div id="header"></div>
-        <!--Background Start-->
-        <div class="row"
-            style="background-image: url('/FRONT/STATIQUE/bootstrap/html/assets/back/bg.jpg'); min-height:200px">
-            <div class="col-12" style="align-self: center">
-            </div>
-        </div><!--Background End-->
+    <?php require 'header.php';
+    include('DAO.php');?>
         <!--Separateur Start-->
         <div class="row">
             <div class="col-12 d-md-flex bg-dark justify-content-center " style="align-self: center;">
@@ -275,7 +270,7 @@
                     data-slide="next">Suivant</button>
             </div>
         </div><!--Button End-->
-        <div id="footer"></div>
+        <?php require 'footer.php'; ?>
     </div><!--Container End-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"

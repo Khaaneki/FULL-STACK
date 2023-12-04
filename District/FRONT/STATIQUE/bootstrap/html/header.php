@@ -20,16 +20,16 @@
                         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                             <ul class="navbar-nav">
                                 <li class="nav-item ">
-                                    <a class="nav-link" href="index.html">Accueil</a>
+                                    <a class="nav-link" href="index.php">Accueil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="">Catégorie</a>
+                                    <a class="nav-link" href="Catégorie.php">Catégorie</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="Plat.html">Plat</a>
+                                    <a class="nav-link" href="Plat.php">Plat</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="Contact.html">Contact</a>
+                                    <a class="nav-link" href="Contact.php">Contact</a>
                                 </li>
                             </ul>
                         </div>

@@ -1,35 +1,133 @@
 <?php
 
-include 'Myadmin.php';
+$servername = "localhost";
+$username = "admin";
+$password = "Afpa1234";
+$dbname = "District";
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+    echo "Erreur de connexion " . $e->getMessage();
+}
 
 $stmt = $conn->query("SELECT * FROM plat");
 $stmt1 = $conn->query("SELECT * FROM categorie");
 
-$plats = [
-    ['id' => 1, 'libelle' => 'Sushi', 'description' => 'saumon, riz', 'prix' => 10.50, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/sushi_Resized/sushiiiiii.jpeg', 'id_categorie' => 12],
-    ['id' => 2, 'libelle' => 'Maki', 'description' => 'saumon, algue, riz', 'prix' => 10.50, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/sushi_Resized/sushiiiiiii.jpeg', 'id_categorie' => 12],
-    ['id' => 3, 'libelle' => 'Nems', 'description' => 'poulet, vermicelles de riz, sauce nuoc mam', 'prix' => 4.50, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/sushi_Resized/nems poulet.jpg', 'id_categorie' => 12],
-    ['id' => 4, 'libelle' => 'Onigiri', 'description' => 'riz, algue, saumon', 'prix' => 3.50, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/sushi_Resized/Onigiri.jpg', 'id_categorie' => 12],
-    ['id' => 5, 'libelle' => 'Royal', 'description' => 'steak haché, salade, bacon', 'prix' => 8, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/burger_Resized/Food-Name-6340.jpg', 'id_categorie' => 5],
-    ['id' => 6, 'libelle' => 'Cheeseburger', 'description' => 'steak haché, salade, bacon', 'prix' => 5.50, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/burger_Resized/cheesburger.jpg', 'id_categorie' => 5],
-    ['id' => 7, 'libelle' => 'Slider', 'description' => 'steak haché, salade, tomate, fromage, bacon', 'prix' => 9.50, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/burger_Resized/hamburger.jpg', 'id_categorie' => 5],
-    ['id' => 8, 'libelle' => 'Hamburger', 'description' => 'steak haché, salade, tomate, fromage, mayonnaise', 'prix' => 6.50, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/burger_Resized/burger.jpeg', 'id_categorie' => 5],
-    ['id' => 9, 'libelle' => 'Norvégienne', 'description' => 'crème fraiche, saumon, mozzarella', 'prix' => 12.50, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/pizza_Resized/pizza-salmon.png', 'id_categorie' => 4],
-    ['id' => 10, 'libelle' => 'Burger', 'description' => 'boeuf haché, tomate, oignon, cheddar, sauce tomate', 'prix' => 13.50, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/pizza_Resized/pizza_burger.jpeg', 'id_categorie' => 4],
-    ['id' => 11, 'libelle' => 'Margherita', 'description' => 'base de tomate, basilic, mozzarella', 'prix' => 12.50, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/pizza_Resized/pizza-margherita.jpg', 'id_categorie' => 4],
-    ['id' => 12, 'libelle' => 'Fromage', 'description' => 'crème fraiche, 4 fromage', 'prix' => 11.50, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/pizza_Resized/pizza_4.jpg', 'id_categorie' => 4],
-    ['id' => 13, 'libelle' => 'salade césar', 'description' => 'salade, poulet, tomate, mozzarella', 'prix' => 6.50, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/salade_Resized/cesar_salad.jpg', 'id_categorie' => 13],
-    ['id' => 14, 'libelle' => 'salde thon', 'description' => 'oeuf, tomate, salade, poivron', 'prix' => 7.50, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/salade_Resized/salade.jpeg', 'id_categorie' => 13],
-    ['id' => 15, 'libelle' => 'salade', 'description' => 'poulet, avocat, salade, concombre, tomate cerise', 'prix' => 8.50, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/salade_Resized/salade_1.jpeg', 'id_categorie' => 13],
-    ['id' => 16, 'libelle' => 'simplade', 'description' => 'salade, navet, prunelle', 'prix' => 5.50, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/salade_Resized/salade_2.jpeg', 'id_categorie' => 13],
-    ['id' => 17, 'libelle' => 'wrap heal', 'description' => 'salade, tomate, poulet, sauce maison', 'prix' => 4.50, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/wrap_Resized/Food-Name-3461.jpg', 'id_categorie' => 9],
-    ['id' => 18, 'libelle' => 'wrapeur', 'description' => 'beef, tomate, salade, concombre, oignon, maïs', 'prix' => 5.00, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/swrapResized/wrap.jpeg', 'id_categorie' => 9],
-    ['id' => 19, 'libelle' => 'wrapoule', 'description' => 'salade, poulet, tomate, sauce chef', 'prix' => 3.80, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/wrap_Resized/wrap.jpg', 'id_categorie' => 9],
-    ['id' => 20, 'libelle' => 'corn-wrap', 'description' => 'poulet, légumes...', 'prix' => 4.20, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/wrap_Resized/wraps-poulet-legumes-640.jpg', 'id_categorie' => 9],
-    ['id' => 21, 'libelle' => 'croque-monsieur', 'description' => 'dinde, fromage, crème fraiche', 'prix' => 3.60, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/croque_Resized/croque.jpeg', 'id_categorie' => 11],
-    ['id' => 22, 'libelle' => '#', 'description' => '#', 'prix' => 4.20, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/croque_Resized/croque.jpg', 'id_categorie' => 11],
-    ['id' => 23, 'libelle' => '#', 'description' => '#', 'prix' => 4.20, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/croque_Resized/Croque_monsieur_mozzarella_galbani.jpg', 'id_categorie' => 11],
-    ['id' => 24, 'libelle' => '#', 'description' => '#', 'prix' => 4.20, 'image' => '/FRONT/STATIQUE/bootstrap/html/assets/Plat/croque_Resized/Food-Name-3631.jpg', 'id_categorie' => 11],
-];
+$id_categorie2=12; 
+
+$id=1;
+$libelle='Sushi';
+$description='saumon, riz';
+$prix=10.50;
+$image='sushiiiiii.jpeg';
+
+$id_categorie2=5; 
+
+$id1=2;
+$libelle1='Royal';
+$description1='steak haché, salade, bacon';
+$prix1=7.50;
+$image1='Food-Name-6340.jpg';
+
+$id_categorie2=4; 
+
+$id2=3;
+$libelle2='Norvégienne';
+$description2='crème fraiche, saumon, mozzarella';
+$prix2=12.50;
+$image2='pizza-salmon.png';
+
+$id_categorie2=13; 
+
+$id3=4;
+$libelle3='Salade césar';
+$description3='salade, poulet, tomate, mozzarella';
+$prix3=6.50;
+$image3='cesar_salad.jpg';
+
+$id_categorie2=10; 
+
+$id4=5;
+$libelle4='Wrap heal';
+$description4='salade, tomate, poulet, sauce maison';
+$prix4=4.50;
+$image4='Food-Name-3461.jpg';
+
+$id_categorie2=11; 
+
+$id5=6;
+$libelle5='Croque-monsieur';
+$description5='dinde, fromage, crème fraiche';
+$prix5=3.60;
+$image5='croque.jpeg';
+
+
+try {
+
+$stmt = $conn->prepare("INSERT INTO plat (libelle, description, prix, image, active, id_categorie, id) VALUES (:libelle, :description, :prix, :image, :active, :id_categorie, :id)");
+    $stmt->bindParam(':id',$id);
+    $stmt->bindParam(':libelle',$libelle);
+    $stmt->bindParam(':description',$description);
+    $stmt->bindParam(':prix',$prix);
+    $stmt->bindParam(':image',$image);
+    $stmt->bindParam(':id_categorie',$id_categorie);
+    $stmt->bindParam(':active',$active);
+    $stmt->execute();
+
+    $stmt = $conn->prepare("INSERT INTO plat (libelle, description, prix, image, active, id_categorie, id) VALUES (:libelle, :description, :prix, :image, :active, :id_categorie, :id)");
+    $stmt->bindParam(':id',$id1);
+    $stmt->bindParam(':libelle',$libelle1);
+    $stmt->bindParam(':description',$description1);
+    $stmt->bindParam(':prix',$prix1);
+    $stmt->bindParam(':image',$image1);
+    $stmt->bindParam(':id_categorie',$id_categorie);
+    $stmt->bindParam(':active',$active);
+    $stmt->execute();
+
+    $stmt = $conn->prepare("INSERT INTO plat (libelle, description, prix, image, active, id_categorie, id) VALUES (:libelle, :description, :prix, :image, :active, :id_categorie, :id)");
+    $stmt->bindParam(':id',$id2);
+    $stmt->bindParam(':libelle',$libelle2);
+    $stmt->bindParam(':description',$description2);
+    $stmt->bindParam(':prix',$prix2);
+    $stmt->bindParam(':image',$image2);
+    $stmt->bindParam(':id_categorie',$id_categorie);
+    $stmt->bindParam(':active',$active);
+    $stmt->execute();
+
+    $stmt = $conn->prepare("UPDATE plat SET libelle=:libelle, description=:description, prix=:prix, image=:image, id_categorie=:id_categorie, active=:active   WHERE id=:id");
+    $stmt->bindParam(':id',$id3);
+    $stmt->bindParam(':libelle',$libelle3);
+    $stmt->bindParam(':description',$description3);
+    $stmt->bindParam(':prix',$prix3);
+    $stmt->bindParam(':image',$image3);
+    $stmt->bindParam(':id_categorie',$id_categorie);
+    $stmt->bindParam(':active',$active);
+    $stmt->execute();
+
+    $stmt = $conn->prepare("INSERT INTO plat (libelle, description, prix, image, active, id_categorie, id) VALUES (:libelle, :description, :prix, :image, :active, :id_categorie, :id)");
+    $stmt->bindParam(':id',$id4);
+    $stmt->bindParam(':libelle',$libelle4);
+    $stmt->bindParam(':description',$description4);
+    $stmt->bindParam(':prix',$prix4);
+    $stmt->bindParam(':image',$image4);
+    $stmt->bindParam(':id_categorie',$id_categorie);
+    $stmt->bindParam(':active',$active);
+    $stmt->execute();
+
+    $stmt = $conn->prepare("INSERT INTO plat (libelle, description, prix, image, active, id_categorie, id) VALUES (:libelle, :description, :prix, :image, :active, :id_categorie, :id)");
+    $stmt->bindParam(':id',$id5);
+    $stmt->bindParam(':libelle',$libelle5);
+    $stmt->bindParam(':description',$description5);
+    $stmt->bindParam(':prix',$prix5);
+    $stmt->bindParam(':image',$image5);
+    $stmt->bindParam(':id_categorie',$id_categorie);
+    $stmt->bindParam(':active',$active);
+    $stmt->execute();
+
+} catch (PDOException $e) {
+    $conn->rollback();
+    echo "Erreur : " . $e->getMessage();
+}
 
 ?>
