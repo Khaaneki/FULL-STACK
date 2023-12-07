@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         fwrite($fichier, "Question : " . $question . "\n");
 
         fclose($fichier);
-        echo "Les informations ont été enregistrées " . $datecourante;
+        echo "Les informations ont été enregistrées ";
     } else {
         echo "Une erreur s'est produite lors de l'ouverture du fichier.";
     }

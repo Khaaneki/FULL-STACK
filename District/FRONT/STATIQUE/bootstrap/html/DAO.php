@@ -119,7 +119,7 @@ $description15='salade, navet, prunelle';
 $prix15=6.50;
 $image15='salade_2.jpeg';
 
-$id_categorie4=10; 
+$id_categorie4=9; 
 
 $id16=17;
 $libelle16='Wrap heal';
@@ -347,7 +347,7 @@ $conn -> beginTransaction();
     // $stmt->bindParam(':active',$active);
     // $stmt->execute();
 
-    // $stmt = $conn->prepare("INSERT INTO plat (libelle, description, prix, image, active, id_categorie, id) VALUES (:libelle, :description, :prix, :image, :active, :id_categorie, :id)");
+    // $stmt = $conn->prepare("UPDATE plat SET libelle = :libelle, description=:description, prix = :prix, image=:image, id_categorie=:id_categorie, active = :active   WHERE id = :id");
     // $stmt->bindParam(':id',$id17);
     // $stmt->bindParam(':libelle',$libelle17);
     // $stmt->bindParam(':description',$description17);
@@ -357,7 +357,7 @@ $conn -> beginTransaction();
     // $stmt->bindParam(':active',$active);
     // $stmt->execute();
 
-    // $stmt = $conn->prepare("INSERT INTO plat (libelle, description, prix, image, active, id_categorie, id) VALUES (:libelle, :description, :prix, :image, :active, :id_categorie, :id)");
+    // $stmt = $conn->prepare("UPDATE plat SET libelle = :libelle, description=:description, prix = :prix, image=:image, id_categorie=:id_categorie, active = :active   WHERE id = :id");
     // $stmt->bindParam(':id',$id18);
     // $stmt->bindParam(':libelle',$libelle18);
     // $stmt->bindParam(':description',$description18);
@@ -367,7 +367,7 @@ $conn -> beginTransaction();
     // $stmt->bindParam(':active',$active);
     // $stmt->execute();
 
-    // $stmt = $conn->prepare("INSERT INTO plat (libelle, description, prix, image, active, id_categorie, id) VALUES (:libelle, :description, :prix, :image, :active, :id_categorie, :id)");
+    // $stmt = $conn->prepare("UPDATE plat SET libelle = :libelle, description=:description, prix = :prix, image=:image, id_categorie=:id_categorie, active = :active   WHERE id = :id");
     // $stmt->bindParam(':id',$id19);
     // $stmt->bindParam(':libelle',$libelle19);
     // $stmt->bindParam(':description',$description19);

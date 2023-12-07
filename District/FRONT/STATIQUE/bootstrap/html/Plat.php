@@ -41,7 +41,7 @@ while ($row = $stmt->fetch()) {
             <div class="card bg-dark">
                 <div class="card-body d-flex flex-column align-items-center">
                 <h4 class="card-title text-light mb-3">' . $row['titre'] . '</h4>
-                    <img src="assets/all/' . $row['image'] . '" class="card-img-top" alt="' . $row['image'] . '" style="max-width: 25%;>
+                <img src="assets/all/' . $row['image'] . '" class="card-img-top" alt="' . $row['image'] . '" style="max-width: 25%;">
                     <p class="h3 text-light my-3 text-center"></p>
                     <p class="card-text text-light h4 d-none d-lg-flex py-3">' . $row['description'] . '</p>
                     <p class="card-text text-light h6 d-lg-none d-lg-flex py-3">' . $row['description'] . '</p>
