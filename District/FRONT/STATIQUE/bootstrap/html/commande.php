@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="/FRONT/STATIQUE/bootstrap/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Commande</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -19,10 +19,10 @@
     <script src="/FRONT/STATIQUE/javascript/javascript.js" defer></script>
     <!--Container Start-->
     <div class="container-fluid parallax">
-        <div id="header"></div>
+    <?php require 'header.php'; ?>
         <!--Background Start-->
         <div class="row"
-            style="background-image: url('/FRONT/STATIQUE/bootstrap/html/assets/back/bg.jpg'); min-height:200px">
+            style="background-image: url('assets/back/bg.jpg'); min-height:200px">
             <div class="col-12" style="align-self: center">
             </div>
         </div><!--Background End-->
@@ -33,7 +33,7 @@
             </div>
         </div><!--Separateur End-->
         <!--Forms Start-->
-        <div class="row d-flex justify-content-center">
+        <div class="row d-flex justify-content-center" >
             <div class="col-12 py-4 d-flex justify-content-center">
                 <div class="card bg-dark rounded">
                     <div class="card-body" style="max-width: 45rem;">
@@ -62,7 +62,7 @@
             </div>
             </div>
         <div class="row d-flex justify-content-center" style="background-color: lightblue;">
-            <form id="form1" method="post">
+            <form action="commande_push.php" id="form1" method="post">
                 <div class="row pt-4">
                     <div class="col-12">
                     <label for="nom">
@@ -100,7 +100,7 @@
         </div>
         </div>
         </form><!--Forms End-->
-        <div id="footer"></div>
+        <?php require 'footer.php'; ?>
     </div><!--Container End-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"

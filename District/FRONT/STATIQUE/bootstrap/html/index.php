@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="/FRONT/STATIQUE/bootstrap/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Accueil</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -20,13 +20,13 @@
     <div class="container-fluid parallax">
     <?php require 'header.php'; ?>
         <!--Background & Research Start-->
-        <div class="row" style="background-image: url('/FRONT/STATIQUE/bootstrap/html/assets/back/bg.jpg'); min-height:200px">
+        <div class="row" style="background-image: url('assets/back/bg.jpg'); min-height:200px">
             <div class="col-12" style="align-self: center">
                 <form class="form-inline justify-content-center my-3">
                     <input class="form-control" style="min-width: 400px;" type="search" placeholder="Rechercher">
                     <button class="btn text-light btn-outline-success bg-success" type="submit">Rechercher</button>
                     <div class="d-flex justify-content-end py-3"><video style="width: 70%;" muted autoplay width="460" height="260" loop>
-                        <source src="/FRONT/STATIQUE/bootstrap/html/assets/back/video.mp4">
+                        <source src="assets/back/video.mp4">
                     </video>
                     </div>
                 </form>
@@ -41,100 +41,96 @@
         <?php
 include('DAO.php');
 $card = 1;
-$stmt = $conn->query("select a.libelle,a.image,sum(quantite) from commande c join plat on p.id = c.id_plat join categorie a on p.id_categorie = a.id group by a.id order by sum(quantite) desc;");
+$stmt = $conn->query("select a.libelle, a.image, sum(quantite) from commande c join plat p on p.id = c.id_plat join categorie a on p.id_categorie = a.id group by a.id order by sum(quantite) desc;");
 while ($row = $stmt->fetch()) {
-    if ($card == 1) {
-        echo '<div class="row justify-content-center d-none d-md-flex pt-5">';
-    }
-    echo '<div class="col-3 d-flex justify-content-center text center">
-            <a href="Plat.php' . $row['libelle'] . '">
-                <div class="card bg-dark text-light">
-                    <div class="card-header">
-                        <p class="h3">' . $row['libelle'] . '</p>
-                    </div>
-                    <div class="card-body">
-                        <img class="card-img-bottom" src="/bootstrap/assets/cat/' . $row['image'] . '" alt="image">
-                    </div>
-                </div>
-            </a>
-        </div>';
-    $card++;
-    if ($card == 4) {
-        $card = 1;
-        echo '</div>';
-    }
-}
-        $stmt = $conn->query("select a.libelle, a.image from categorie a where a.libelle not in (select a.libelle from commande c join plat on plat.id = c.id_plat join categorie on plat.id_categorie = a.id group by a.id order by sum(quantite) desc) and active='Yes';");
-        while ($row = $stmt->fetch()) {
-            if ($card==1)
-            {
-                echo '<div class="row justify-content-center d-none d-md-flex pt-5">';
-            }
-            echo '<div class="col-3 d-flex justify-content-center text-center">
-                    <a href="Plat.php'.$row['libelle'].'">
-                    <div class="card bg-dark text-light">
-                        <div class="card-header">
-                            <p class="h3">'.$row['libelle'].'</p>
-                        </div>
-                        <div class="card-body">
-                            <img class="card-img-bottom" src="/FRONT/STATIQUE/bootstrap/html/assets/cat/'.$row['image'].'"
-                                alt="image">
-                        </div>
-                    </div>
-                </a>
-            </div>';
-            $card++;
-            if ($card==4)
-            {
-                $card=1;
-                echo '</div>';
+                if ($card == 1) {
+                    echo '<div class="row row-cols-1 row-md-cols-2 justify-content-center d-flex text-center">';
+                }
+                echo '<div class="col-12 col-md-4 d-flex pt-4 justify-content-center">
+                        <a href="Plat.php">
+                            <div class="card bg-dark text-light d-flex" style="max-width: 18rem;">
+                                <div class="card-header">
+                                    <p class="h3 text-center">' . $row['libelle'] . '</p>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img-top" src="assets/cat/' . $row['image'] . '"
+                                        alt="image">
+                                </div>
+                            </div>
+                        </a>
+                    </div>';
+                $card++;
+                if ($card == 4) {
+                    $card = 1;
+                    echo '</div>';
+                }
             }
 
-        }
-        $etat='Annulée';
-        $stmt1=$conn->query("SELECT sum(quantite*prix), p.libelle, p.image from commande c join plat p where id_plat = p.id and c.etat != 'Annulée' group by p.libelle order by sum(quantite) desc limit 5");
-        $stmt1->execute();
-        
-        echo '<div class="row justify-content-center d-flex row-cols-1 row-md-cols-3 py-4">';
-        while ($row = $stmt1->fetch())
-        {
+            $stmt2 = $conn->query("select a.libelle, a.image from categorie a where a.libelle not in (select a.libelle from commande c join plat p on p.id = c.id_plat join categorie a on p.id_categorie = a.id group by a.id order by sum(quantite) desc) and active='Yes';");
 
-            if($card <= 3){
-            echo '<div class="col-12 col-md-4 justify-content-center d-flex text-center">
-            <a href="#">
-            <div class="card bg-dark text-light">
-                <div class="card-header">
-                    <p class="h3">'.$row['libelle'].'</p>
-                </div>
-                <div class="card-body">
-                    <img class="card-img-bottom" src="/FRONT/STATIQUE/bootstrap/html/assets/Plat/all'.$row['image'].'"
-                        alt="image">
+            while ($row = $stmt2->fetch()) {
+                if ($card == 1) {
+                    echo '<div class="row justify-content-center d-none d-md-flex pt-4">';
+                }
+                echo '<div class="col-12 col-md-4 d-flex pt-4 py-4 justify-content-center">
+                        <a href="Plat.php">
+                            <div class="card bg-dark text-light d-flex" style="max-width: 18rem;">
+                                <div class="card-header">
+                                    <p class="h3 text-center">' . $row['libelle'] . '</p>
+                                </div>
+                                <div class="card-body">
+                                    <img class="card-img-top" src="assets/cat/' . $row['image'] . '"
+                                        alt="image">
+                                </div>
+                            </div>
+                        </a>
+                    </div>';
+                $card++;
+                if ($card == 6) {
+                    $card = 1;
+                    echo '</div>';
+                }
+            }
+        ?>
+        <!-- Debut separateur -->
+        <div class="row">
+            <div class="col-12 d-none d-md-flex bg-dark justify-content-center" style="align-self: center;">
+                <p class="h3 text-center text-light my-1">Top vente</p>
+            </div>
+        </div><!-- Fin separateur -->
+        <?php
+    $etat='Annulée';
+    $stmt1=$conn->query("SELECT sum(quantite*prix), p.libelle as titre, p.description, p.image from commande c join plat p where c.id_plat = p.id and c.etat != 'Annulée' group by p.libelle order by sum(quantite) desc limit 4");
+    $stmt1->execute();
+
+    echo '<div class="row justify-content-center d-flex row-cols-1 row-md-cols-3 py-4">';
+
+    $card = 0;
+
+    while ($row = $stmt1->fetch())
+    {
+        echo '
+        <div class="col-12 col-lg-3 pt-3 py-3 d-none d-md-flex">
+            <div class="card bg-dark">
+                <div class="card-body d-flex flex-column align-items-center text-center">
+                <h4 class="card-title text-light mb-3">' . $row['titre'] . '</h4>
+                    <img src="assets/all/' . $row['image'] . '" class="card-img-top" alt="' . $row['image'] . '" style="max-width: 60%;>
+                    <p class="h3 text-light my-3 text-center"></p>
+                    <p class="card-text text-light h4 d-none d-lg-flex py-3">' . $row['description'] . '</p>
+                    <p class="card-text text-light h6 d-lg-none d-lg-flex py-3">' . $row['description'] . '</p>
+                    <div class="row-outline mt-auto d-flex">
+                        <a href="commande.php" class="btn btn-secondary" style="max-width: 8rem;">Commander</a>
+                    </div>
                 </div>
             </div>
-            </a>
         </div>';
-            }
-            if ($card>3)
-            {
-             echo '<div class="col-12 d-md-none justify-content-center d-flex text-center">
-             <a href="#">
-             <div class="card bg-dark text-light">
-                 <div class="card-header">
-                     <p class="h3">'.$row['libelle'].'</p>
-                 </div>
-                 <div class="card-body">
-                     <img class="card-img-bottom" src="/FRONT/STATIQUE/bootstrap/html/assets/Plat/all'.$row['image'].'"
-                         alt="image">
-                 </div>
-             </div>
-             </a>
-         </div>';
-        }
-            }
+
         $card++;
-        
-        echo '</div>';
-        ?>
+    }
+  
+
+    echo '</div>';
+?>
  <?php require 'footer.php'; ?>
     </div><!--Container End-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"

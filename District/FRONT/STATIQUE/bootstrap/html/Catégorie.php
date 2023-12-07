@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="/FRONT/STATIQUE/bootstrap/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Catégorie</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -30,20 +30,20 @@
                     echo '<div class="row row-cols-1 row-md-cols-2 justify-content-center d-flex text-center">';
                 }
                 echo '<div class="col-12 col-md-4 d-flex pt-4 justify-content-center">
-                        <a href="Plat.php' . $row['libelle'] . '">
+                        <a href="Plat.php">
                             <div class="card bg-dark text-light d-flex" style="max-width: 18rem;">
                                 <div class="card-header">
                                     <p class="h3 text-center">' . $row['libelle'] . '</p>
                                 </div>
                                 <div class="card-body">
-                                    <img class="card-img-bottom" src="/FRONT/STATIQUE/bootstrap/html/assets/cat/' . $row['image'] . '"
+                                    <img class="card-img-top" src="assets/cat/' . $row['image'] . '"
                                         alt="image">
                                 </div>
                             </div>
                         </a>
                     </div>';
                 $card++;
-                if ($card == 6) {
+                if ($card == 4) {
                     $card = 1;
                     echo '</div>';
                 }
@@ -55,14 +55,14 @@
                 if ($card == 1) {
                     echo '<div class="row justify-content-center d-none d-md-flex pt-4">';
                 }
-                echo '<div class="col-12 col-md-4 d-flex pt-4 justify-content-center">
-                        <a href="Plat.php' . $row['libelle'] . '">
+                echo '<div class="col-12 col-md-4 d-flex pt-4 py-4 justify-content-center">
+                        <a href="Plat.php">
                             <div class="card bg-dark text-light d-flex" style="max-width: 18rem;">
                                 <div class="card-header">
                                     <p class="h3 text-center">' . $row['libelle'] . '</p>
                                 </div>
                                 <div class="card-body">
-                                    <img class="card-img-bottom" src="/FRONT/STATIQUE/bootstrap/html/assets/cat/' . $row['image'] . '"
+                                    <img class="card-img-top" src="assets/cat/' . $row['image'] . '"
                                         alt="image">
                                 </div>
                             </div>

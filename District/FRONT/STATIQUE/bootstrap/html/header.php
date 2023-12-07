@@ -3,8 +3,8 @@
             <!--Logo Start-->
             <div class="row" style="background-color : #970747">
                 <div class="col-4">
-                    <a href="/FRONT/STATIQUE/bootstrap/html/index.html">
-                        <img src="/FRONT/STATIQUE/bootstrap/html/assets/logo/logo_transparent.png" class="img-fluid"
+                    <a href="index.php">
+                        <img src="assets/logo/logo_transparent.png" class="img-fluid"
                             style="max-width: 150px;" alt="logo">
                     </a>
                 </div>

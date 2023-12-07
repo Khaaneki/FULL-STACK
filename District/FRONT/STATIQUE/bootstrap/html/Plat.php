@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="/FRONT/STATIQUE/bootstrap/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Plat</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -26,250 +26,43 @@
             </div>
         </div><!--Separateur End-->
         <!--Plats Start-->
-        <div class="row pt-2 justify-content-center">
-            <div id="carouselExample" class="carousel slide" data-interval="false">
-                <div class="carousel-inner">
-                    <div class="row px-5">
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col-12 d-md-flex  py-4 justify-content-center text-center"
-                                    style="align-self: center;">
-                                    <p class="h1">Hamburger</p>
-                                </div>
-                            </div>
-                            <div class="row d-flex  row-cols-1 row-md-cols-2 pt-4">
-                                <div class="col-12 col-lg-6 px-6 pb-4 d-flex justify-content-center">
-                                    <div class="card bg-dark rounded">
-                                        <div class="card-body" style="max-width: 45rem;">
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <img src="/FRONT/STATIQUE/bootstrap/html/assets/Plat/burger_Resized/burger.jpeg"
-                                                        class="card-img-bottom" alt="burger">
-                                                </div>
-                                                <div class="col-8 px-5 px-lg-0 pb-3 position-static">
-                                                    <p class="h3 text-light">Hamburger</p>
-                                                    <p class="card-text text-light h4 d-none d-lg-flex py-3">salade,
-                                                        tomate,
-                                                        mayonnaise</p>
-                                                    <p class="card-text text-light h6 d-lg-none d-lg-flex py-3">salade,
-                                                        tomate,
-                                                        mayonnaise</p>
-                                                        <div class="row-outline d-flex justify-content-end">
-                                                            <a href="#" class="btn btn-secondary"
-                                                                style="max-width: 8rem;">Commander</a>
-                                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-6 justify-content-center px-4 pb-4 d-flex">
-                                    <div class="card bg-dark rounded">
-                                        <div class="card-body" style="max-width: 45rem;">
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <img src="/FRONT/STATIQUE/bootstrap/html/assets/Plat/burger_Resized/hamburger.jpg"
-                                                        class="card-img-bottom" alt="Hamburger">
-                                                </div>
-                                                <div class="col-8 px-5 px-lg-0 pb-3 position-static">
-                                                    <p class="h3 text-light">Slider</p>
-                                                    <p class="card-text text-light h4 d-none d-lg-flex py-3">salade,
-                                                        tomate,
-                                                        fromage, bacon</p>
-                                                    <p class="card-text text-light h6 d-lg-none d-lg-flex py-3">salade,
-                                                        tomate,
-                                                        fromage, bacon</p>
-                                                        <div class="row-outline d-flex justify-content-end">
-                                                            <a href="#" class="btn btn-secondary"
-                                                                style="max-width: 8rem;">Commander</a>
-                                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row d-flex  row-cols-1 row-md-cols-2">
-                                <div class="col-12 col-lg-6 py-4 px-4 d-flex justify-content-center">
-                                    <div class="card bg-dark rounded">
-                                        <div class="card-body" style="max-width: 45rem;">
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <img src="/FRONT/STATIQUE/bootstrap/html/assets/Plat/burger_Resized/cheesburger.jpg"
-                                                        class="card-img-bottom" alt="Cheeseburger">
-                                                </div>
-                                                <div class="col-8 px-5 px-lg-0 pr-5 pb-3 position-static">
-                                                    <p class="h3 text-light">Cheeseburger</p>
-                                                    <p class="card-text text-light h4 d-none d-lg-flex py-3">steack
-                                                        haché, fromage,
-                                                        barbecue</p>
-                                                    <p class="card-text text-light h6 d-lg-none d-lg-flex py-3">steack
-                                                        haché, fromage,
-                                                        barbecue</p>
-                                                        <div class="row-outline d-flex justify-content-end">
-                                                    <a href="/FRONT/STATIQUE/bootstrap/html/Commande.html" class="btn btn-secondary"
-                                                        style="max-width: 8rem;">Commander</a>
-                                                </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-6 py-4 px-4 justify-content-center d-flex">
-                                    <div class="card bg-dark rounded">
-                                        <div class="card-body" style="max-width: 45rem;">
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <img src="/FRONT/STATIQUE/bootstrap/html/assets/Plat/burger_Resized/Food-Name-6340.jpg"
-                                                        class="card-img-bottom" alt="cesar_salad">
-                                                </div>
-                                                <div class="col-8 px-5 px-lg-0 pb-3 position-static">
-                                                    <p class="h3 text-light">Royal</p>
-                                                    <p class="card-text text-light h4 d-none d-lg-flex py-3">steack
-                                                        haché, salade,
-                                                        bacon</p>
-                                                    <p class="card-text text-light h6 d-lg-none d-lg-flex py-3">steack
-                                                        haché, salade,
-                                                        bacon</p>
-                                                        <div class="row-outline d-flex justify-content-end">
-                                                    <a href="#" class="btn btn-secondary"
-                                                        style="max-width: 8rem;">Commander</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-12 d-md-flex  py-3 justify-content-center text-center"
-                                    style="align-self: center;">
-                                    <p class="h1">Pizza</p>
-                                </div>
-                            </div>
-                            <div class="row d-flex  row-cols-1 row-md-cols-2 pt-4">
-                                <div class="col-12 col-lg-6 px-4 pb-4 d-flex justify-content-center">
-                                    <div class="card bg-dark rounded">
-                                        <div class="card-body" style="max-width: 45rem;">
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <img src="/FRONT/STATIQUE/bootstrap/html/assets/Plat/burger_Resized/Food-Name-6340.jpg"
-                                                        class="card-img-bottom" alt="cesar_salad">
-                                                </div>
-                                                <div class="col-8 px-5 px-lg-0 pr-5 pb-3 position-static">
-                                                    <p class="h3 text-light">Royal</p>
-                                                    <p class="card-text text-light h4 d-none d-lg-flex py-3">steack
-                                                        haché, salade,
-                                                        bacon</p>
-                                                    <p class="card-text text-light h6 d-lg-none d-lg-flex py-3">steack
-                                                        haché, salade,
-                                                        bacon</p>
-                                                        <div class="row-outline d-flex justify-content-end">
-                                                            <a href="#" class="btn btn-secondary"
-                                                                style="max-width: 8rem;">Commander</a>
-                                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-6 justify-content-center px-4 pb-4 d-flex">
-                                    <div class="card bg-dark rounded">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <img src="/FRONT/STATIQUE/bootstrap/html/assets/Plat/burger_Resized/Food-Name-6340.jpg"
-                                                        class="card-img-bottom" alt="cesar_salad">
-                                                </div>
-                                                <div class="col-8 px-5 px-lg-0 pb-3 position-static">
-                                                    <p class="h3 text-light">Royal</p>
-                                                    <p class="card-text text-light h4 d-none d-lg-flex py-3">steack
-                                                        haché, salade,
-                                                        bacon</p>
-                                                    <p class="card-text text-light h6 d-lg-none d-lg-flex py-3">steack
-                                                        haché, salade,
-                                                        bacon</p>
-                                                        <div class="row-outline d-flex justify-content-end">
-                                                            <a href="#" class="btn btn-secondary"
-                                                                style="max-width: 8rem;">Commander</a>
-                                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row d-flex  row-cols-1 row-md-cols-2">
-                                <div class="col-12 col-lg-6 py-4 px-4 d-flex justify-content-center">
-                                    <div class="card bg-dark rounded">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <img src="/FRONT/STATIQUE/bootstrap/html/assets/Plat/burger_Resized/Food-Name-6340.jpg"
-                                                        class="card-img-bottom" alt="cesar_salad">
-                                                </div>
-                                                <div class="col-8 px-5 px-lg-0 pr-5 pb-3 position-static">
-                                                    <p class="h3 text-light">Royal</p>
-                                                    <p class="card-text text-light h4 d-none d-lg-flex py-3">steack
-                                                        haché, salade,
-                                                        bacon</p>
-                                                    <p class="card-text text-light h6 d-lg-none d-lg-flex py-3">steack
-                                                        haché, salade,
-                                                        bacon</p>
-                                                        <div class="row-outline d-flex justify-content-end">
-                                                            <a href="#" class="btn btn-secondary"
-                                                                style="max-width: 8rem;">Commander</a>
-                                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-6 py-4 px-4 justify-content-center d-flex">
-                                    <div class="card bg-dark rounded">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <img src="/FRONT/STATIQUE/bootstrap/html/assets/Plat/burger_Resized/Food-Name-6340.jpg"
-                                                        class="card-img-bottom" alt="cesar_salad">
-                                                </div>
-                                                <div class="col-8 px-5 px-lg-0 pr-5 pb-3 position-static">
-                                                    <p class="h3 text-light">Royal</p>
-                                                    <p class="card-text text-light h4 d-none d-lg-flex py-3">steack
-                                                        haché, salade,
-                                                        bacon</p>
-                                                    <p class="card-text text-light h6 d-lg-none d-lg-flex py-3">steack
-                                                        haché, salade,
-                                                        bacon</p>
-                                                        <div class="row-outline d-flex justify-content-end">
-                                                            <a href="#" class="btn btn-secondary"
-                                                                style="max-width: 8rem;">Commander</a>
-                                                            </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<?php
+$stmt = $conn->query("SELECT a.libelle, p.libelle as titre, p.description, p.image, p.id from categorie a join plat p where p.id_categorie = a.id and a.active = 'Yes' Order by a.libelle");
+$cardCount = 0;
+
+while ($row = $stmt->fetch()) {
+    if ($cardCount % 4 == 0) {
+
+        echo '<div class="row px-5 my-4">';
+    }
+
+    echo '
+        <div class="col-12 col-lg-6 px-6 pb-4">
+            <div class="card bg-dark">
+                <div class="card-body d-flex flex-column align-items-center">
+                <h4 class="card-title text-light mb-3">' . $row['titre'] . '</h4>
+                    <img src="assets/all/' . $row['image'] . '" class="card-img-top" alt="' . $row['image'] . '" style="max-width: 25%;>
+                    <p class="h3 text-light my-3 text-center"></p>
+                    <p class="card-text text-light h4 d-none d-lg-flex py-3">' . $row['description'] . '</p>
+                    <p class="card-text text-light h6 d-lg-none d-lg-flex py-3">' . $row['description'] . '</p>
+                    <div class="row-outline mt-auto d-flex justify-content-end">
+                        <a href="commande.php" class="btn btn-secondary" style="max-width: 8rem;">Commander</a>
                     </div>
                 </div>
             </div>
-        </div>
-        <!--Button Start-->
-        <div class="row d-flex py-5">
-            <div class="col-4 justify-content-center d-flex">
-                <button type="button" class="btn btn-secondary btn-lg" href="#carouselExample" role="button"
-                    data-slide="prev">Précédent</button>
-            </div>
-            <div class="col-4"></div>
-            <div class="col-4 d-flex justify-content-center">
-                <button type="button" class="btn btn-secondary btn-lg" href="#carouselExample" role="button"
-                    data-slide="next">Suivant</button>
-            </div>
-        </div><!--Button End-->
+        </div>';
+
+    $cardCount++;
+
+    if ($cardCount % 4 == 0) {
+        echo '</div>';
+    }
+}
+if ($cardCount % 4 != 0) {
+    echo '</div>';
+}
+
+?>
         <?php require 'footer.php'; ?>
     </div><!--Container End-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
@@ -287,5 +80,3 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"defer></script>
         <script src="/FRONT/DYNAMIQUE/javascript/javascript2.js"defer></script>
 </body>
-
-</html>

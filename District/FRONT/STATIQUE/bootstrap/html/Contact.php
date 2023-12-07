@@ -6,15 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="../CSS/style.css">
+        <link rel="stylesheet" href="../css/style.css">
     <title>Contact</title>
 </head>
 
 <body>
     <div class="container-fluid parallax">
         <?php require 'header.php'; ?>
+        <div class="row"
+            style="background-image: url('assets/back/bg.jpg'); min-height:200px">
+            <div class="col-12" style="align-self: center">
+            </div>
+        </div>
         <div class="row align-self-center d-flex justify-content-center bg-light">
-            <form action="Contact_script.php" class="w-75 m-5" id="form1" name="form1" method="post">
+            <form action="contact_push.php" class="w-75 m-5" id="form1" name="form1" method="post">
                 <div class="row pt-5">
                     <div class="col-6">
                         <label for="nom">Nom</label><br>
@@ -45,12 +50,6 @@
                 <div class="row pb-5">
                     <textarea class="form-control" name="commentaire" id="question" rows="4" cols="10"></textarea>
                     <span class="error-message" id="question-error"></span>
-                </div>
-                <div class="row d-none d-lg-flex py-5">
-                    <!-- Contenu ici -->
-                </div>
-                <div class="row d-none d-lg-flex pt-5 pb-5">
-                    <!-- Contenu ici -->
                 </div>
                 <div class="row pb-5">
                     <div class="col-6 d-flex justify-content-center">

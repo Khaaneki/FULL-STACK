@@ -4,7 +4,8 @@
 
 3. SELECT e.nom, d.nom AS "Département" FROM employe e LEFT JOIN dept d ON e.nodep = d.nodept WHERE d.nom = "Distribution";
 
-4. 
+4. SELECT p.nom, p.salaire, psup.nom AS 'nom_sup', psup.salaire AS 'salaire_sup' 
+FROM employe as psup LEFT OUTER JOIN employe AS p ON p.nosup = psup.noemp WHERE p.salaire > psup.salaire;
 
 5. SELECT nom, titre FROM employe WHERE titre = ( SELECT titre FROM employe WHERE nom = 'Amartakaldire');
 

@@ -39,7 +39,7 @@ ul li a:hover {
     transform: scale(0.98);
 }
 .parallax {
-    background-image: url("/FRONT/STATIQUE/bootstrap/html/assets/back/pf-478a0cd9--Collections-Background.webp");
+    background-image: url("../html/assets/back/pf-478a0cd9--Collections-Background.webp");
   
     min-height: 500px;
   
