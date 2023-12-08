@@ -56,7 +56,7 @@
                         <button type="reset" class="btn btn-secondary btn-lg d-inline">Annuler</button>
                     </div>
                     <div class="col-6 d-flex justify-content-center">
-                        <button type="submit" class="btn btn-secondary btn-lg d-inline">Envoyer</button>
+                        <button type="submit"id="button1" class="btn btn-secondary btn-lg d-inline">Envoyer</button>
                     </div>
                     
                 </div>
@@ -74,6 +74,6 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
-    <script src="../Javascript/Javascript_contact.js" defer></script>
+    <script src="../../../DYNAMIQUE/javascript/javascript_Contact.js"defer></script>
 </body>
 </html>

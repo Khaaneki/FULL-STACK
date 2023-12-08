@@ -10,7 +10,6 @@ var commentaire=document.getElementById('question-error');
 
 form.querySelector("#button1").onclick  = function(e) {
 
-    window.alert('ok');
     nom.innerHTML="";
     prenom.innerHTML="";
     telephone.innerHTML="";

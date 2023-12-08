@@ -22,4 +22,3 @@
                 </div>
             </div>
         </footer><!--Footer End-->
-        <script src="/FRONT/STATIQUE/javascript/javascript.js"></script>

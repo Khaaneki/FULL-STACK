@@ -37,4 +37,3 @@
                 </div>
             </div><!--Navbar End-->
         </header><!--Header End-->
-        <script src="/FRONT/STATIQUE/javascript/javascript.js"></script>

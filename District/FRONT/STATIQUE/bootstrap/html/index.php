@@ -47,7 +47,7 @@ while ($row = $stmt->fetch()) {
                     echo '<div class="row row-cols-1 row-md-cols-2 justify-content-center d-flex text-center">';
                 }
                 echo '<div class="col-12 col-md-4 d-flex pt-4 justify-content-center">
-                        <a href="Plat.php">
+                        <a href="Plat.php?category=' . urlencode($row['libelle']) . '">
                             <div class="card bg-dark text-light d-flex" style="max-width: 18rem;">
                                 <div class="card-header">
                                     <p class="h3 text-center">' . $row['libelle'] . '</p>
@@ -100,7 +100,7 @@ while ($row = $stmt->fetch()) {
         </div><!-- Fin separateur -->
         <?php
     $etat='Annulée';
-    $stmt1=$conn->query("SELECT sum(quantite*prix), p.libelle as titre, p.description, p.image from commande c join plat p where c.id_plat = p.id and c.etat != 'Annulée' group by p.libelle order by sum(quantite) desc limit 4");
+    $stmt1=$conn->query("SELECT sum(quantite*prix), p.id, p.libelle as titre, p.description, p.image from commande c join plat p where c.id_plat = p.id and c.etat != 'Annulée' group by p.libelle order by sum(quantite) desc limit 4");
     $stmt1->execute();
 
     echo '<div class="row justify-content-center d-flex row-cols-1 row-md-cols-3 py-4">';
@@ -119,7 +119,7 @@ while ($row = $stmt->fetch()) {
                     <p class="card-text text-light h4 d-none d-lg-flex py-3">' . $row['description'] . '</p>
                     <p class="card-text text-light h6 d-lg-none d-lg-flex py-3">' . $row['description'] . '</p>
                     <div class="row-outline mt-auto d-flex">
-                        <a href="commande.php" class="btn btn-secondary" style="max-width: 8rem;">Commander</a>
+                    <a href="commande.php?id='.$row['id'].'" class="btn btn-secondary" style="max-width: 8rem;">Commander</a>
                     </div>
                 </div>
             </div>
@@ -146,7 +146,6 @@ while ($row = $stmt->fetch()) {
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"defer></script>
-        <script src="/FRONT/DYNAMIQUE/javascript/javascript2.js"defer></script>
 </body>
 
 </html>

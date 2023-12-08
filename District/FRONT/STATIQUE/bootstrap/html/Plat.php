@@ -27,7 +27,7 @@
         </div><!--Separateur End-->
         <!--Plats Start-->
 <?php
-$stmt = $conn->query("SELECT a.libelle, p.libelle as titre, p.description, p.image, p.id from categorie a join plat p where p.id_categorie = a.id and a.active = 'Yes' Order by a.libelle");
+$stmt = $conn->query("SELECT p.libelle as titre, p.prix, p.description, p.image, p.id from plat p join categorie a where p.id_categorie = a.id order by p.id asc");
 $cardCount = 0;
 
 while ($row = $stmt->fetch()) {
@@ -43,10 +43,12 @@ while ($row = $stmt->fetch()) {
                 <h4 class="card-title text-light mb-3">' . $row['titre'] . '</h4>
                 <img src="assets/all/' . $row['image'] . '" class="card-img-top" alt="' . $row['image'] . '" style="max-width: 25%;">
                     <p class="h3 text-light my-3 text-center"></p>
+                    <p class="card-text text-light h4 py-3">' . $row['prix'] . '€</p>
                     <p class="card-text text-light h4 d-none d-lg-flex py-3">' . $row['description'] . '</p>
                     <p class="card-text text-light h6 d-lg-none d-lg-flex py-3">' . $row['description'] . '</p>
                     <div class="row-outline mt-auto d-flex justify-content-end">
-                        <a href="commande.php" class="btn btn-secondary" style="max-width: 8rem;">Commander</a>
+                    <a href="commande.php?id='.$row['id'].'" class="btn btn-secondary" style="max-width: 8rem;">Commander</a>
+
                     </div>
                 </div>
             </div>
@@ -78,5 +80,4 @@ if ($cardCount % 4 != 0) {
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"defer></script>
-        <script src="/FRONT/DYNAMIQUE/javascript/javascript2.js"defer></script>
 </body>
